@@ -953,7 +953,7 @@ void XML_parser::set_domain_id(int domain_id)
  */
 void XML_parser::set_qos_file(string qos_file)
 {
-    qos_file = CAVECANEM_DIR + "/" + qos_file;
+    qos_file = string(CAVECANEM_DIR) + "/" + qos_file;
     general_properties_.qos_file = qos_file;
 }
 
