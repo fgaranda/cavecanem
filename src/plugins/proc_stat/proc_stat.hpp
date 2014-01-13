@@ -77,7 +77,7 @@ class DLL_EXPORTS proc_stat : public cc_plugin {
  * 
  * @return 
  */
-extern "C" cc_plugin* create_proc_stat(std::string plugin_id,
+extern "C" DLL_EXPORTS cc_plugin* create_proc_stat(std::string plugin_id,
 				 std::map<std::string,std::string> properties) {
     return new proc_stat(plugin_id,properties);
 }
