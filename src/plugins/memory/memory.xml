@@ -1,0 +1,32 @@
+<plugin name="memory">
+  <dll>memory</dll>
+  <create_function>create_memory</create_function>
+  <publishing_period_sec>300</publishing_period_sec>
+  <dds_properties>
+    <dds_qos_library>deployment</dds_qos_library>
+    <dds_qos_profile>deployment</dds_qos_profile>
+  </dds_properties>
+
+  <plugin_config>
+  </plugin_config>
+
+  <type_definition type_name="memory">
+    <struct name="memory">
+      <member name="hostname" type="string" stringMaxLength="50" key="true"/>
+      <member name="ts" type="long"/>
+      <member name="mem_total" type="long"/>
+      <member name="mem_used" type="long"/>
+      <member name="mem_free" type="long"/>
+      <member name="mem_actual_used" type="long"/>
+      <member name="mem_actual_free" type="long"/>
+      <member name="mem_used_percent" type="double"/>
+      <member name="mem_free_percent" type="double"/>
+      <member name="swap_total" type="long"/>
+      <member name="swap_used" type="long"/>
+      <member name="swap_free" type="long"/>
+      <member name="swap_page_in" type="long"/>
+      <member name="swap_page_out" type="long"/>
+    </struct>
+  </type_definition>
+  
+</plugin>
