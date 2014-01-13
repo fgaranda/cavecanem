@@ -3,8 +3,8 @@
   <create_function>create_net_load</create_function>
   <publishing_period_sec>1</publishing_period_sec>
   <dds_properties>
-    <dds_qos_library>deployment</dds_qos_library>
-    <dds_qos_profile>deployment</dds_qos_profile>
+    <dds_qos_library>testing</dds_qos_library>
+    <dds_qos_profile>testing</dds_qos_profile>
   </dds_properties>
   <plugin_config>
   </plugin_config>
