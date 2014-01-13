@@ -1,0 +1,31 @@
+<plugin name="disk">
+  <dll>disk</dll>
+  <create_function>create_disk</create_function>
+  <publishing_period_sec>1</publishing_period_sec>
+  <dds_properties>
+    <dds_qos_library>deployment</dds_qos_library>
+    <dds_qos_profile>deployment</dds_qos_profile>
+    <!-- <datawriter_qos> -->
+    <!-- </datawriter_qos> -->
+  </dds_properties>
+  
+  <plugin_config></plugin_config>
+
+    <type_definition type_name="disk">
+      <struct name="disk">
+      	<member name="hostname" type="string" stringMaxLength="50" key="true"/>
+	<member name="ts" type="long"/>
+	<member name="name" type="string" stringMaxLength="50" key="true"/>
+	<member name="mountdir" type="string" stringMaxLength="50"/>
+	<!--type = 2  FSTYPE_LOCAL_DISK
+	    type = 3  FSTYPE_NETWORK-->
+	<member name="type" type="long"/>	
+	<member name="total" type="long"/>
+	<member name="used" type="long"/>
+	<member name="free" type="long"/>
+	<member name="used_per" type="double"/>
+	<member name="free_per" type="double"/>
+      </struct>
+    </type_definition>
+
+</plugin>

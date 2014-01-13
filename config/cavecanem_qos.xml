@@ -1,0 +1,85 @@
+<dds>
+  
+  <!--
+     *******************************************************************
+     TESTING QoS 
+     *******************************************************************
+     Testing QoS library contains a QoS profile for testing 
+     Cave Canem. For that purpose, a reliable communication is defined.
+     *******************************************************************
+    -->
+  <qos_library name="testing">
+
+    <qos_profile name="testing">
+
+      <datawriter_qos>
+	<!-- Sets a reliable communcation, therefore, samples not successfully
+	     received will be repaired by the middleware infrastructure.-->
+	<reliability>
+	  <kind>RELIABLE_RELIABILITY_QOS</kind>
+	</reliability>
+	
+	<!-- Keeps all the data gathered to send it to the subscribers-->
+	<history>
+	  <kind>KEEP_ALL_HISTORY_QOS</kind>
+	</history>
+
+      </datawriter_qos>
+
+    </qos_profile>
+
+  </qos_library>
+
+  <!--
+     *******************************************************************
+     DEPLOYMENT QoS 
+     *******************************************************************
+     Deployment QoS library contains a QoS profile for the deployment
+     of Cave Canem in a real environment. That is, a reliable communcation,
+     and some features to keep information available for late-joiner 
+     subscribers. The configuration is tuned for a publishing rate of 
+     300 seconds.
+     *******************************************************************
+    -->
+  <qos_library name="deployment">
+
+    <qos_profile name="deployment">
+      <!-- Uncomment the following lines to configure Cave Canem for 
+	   monitoring to limit DDS discovery to set of hosts. -->
+      
+<!--      <participant_qos>
+      	<discovery>
+      	  <initial_peers>
+      	  </initial_peers>
+      	  <accept_unknown_peers>false</accept_unknown_peers>
+      	</discovery>
+      </participant_qos>-->
+      
+      
+      <datawriter_qos>
+	<!-- Sets a reliable communcation, therefore, samples not successfully
+	  received will be repaired by the middleware infrastructure.-->
+	<reliability>
+	  <kind>RELIABLE_RELIABILITY_QOS</kind>
+	</reliability>
+	
+	<!-- DDS will keep a set of samples in memory for late-joiner subscribers even
+	  when the DDS DataWriter dies.-->
+	<durability>
+	  <kind>TRANSIENT_DURABILITY_QOS</kind>
+	</durability>
+
+	<!-- DDS will keep last 864 samples for late-joiner subscribers.
+	     864 means 3 days of samples with a publishing rate of 300 seconds.-->
+	<history>
+	  <kind>KEEP_LAST_HISTORY_QOS</kind>
+	  <depth>864</depth>
+	</history>
+	
+      </datawriter_qos>
+
+    </qos_profile>
+
+  </qos_library>
+
+</dds>
