@@ -8,12 +8,6 @@ set(cavecanem_VERSION_MINOR 2)
 # -----------------------------------------------
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR}/cmake )
 
-# TODO Remove these hardcoded variables
-#set (NDDSHOME /Users/fgarcia/rti/rti_apps/x64Darwin/ndds.5.0.0)
-#set (ARCHITECTURE x64Darwin10gcc4.2.1)
-#set(NDDSHOME /mnt/hgfs/fgarcia/rti/rti_apps/i86Linux/500/ndds.5.0.0)
-#set(ARCHITECTURE i86Linux2.6gcc4.4.5)
-
 # Requirements
 find_package(HypericSigar REQUIRED)
 find_package(ConnextDDS REQUIRED)
@@ -24,11 +18,11 @@ add_definitions(-DCAVECANEM_DIR="${CMAKE_SOURCE_DIR}/..")
 # Plugins
 add_subdirectory(plugins/cpu)
 add_subdirectory(plugins/disk)
-# add_subdirectory(plugins/host_info)
-# add_subdirectory(plugins/memory)
-# add_subdirectory(plugins/net_load)
-# add_subdirectory(plugins/proc)
-# add_subdirectory(plugins/proc_stat)
+add_subdirectory(plugins/host_info)
+add_subdirectory(plugins/memory)
+add_subdirectory(plugins/net_load)
+add_subdirectory(plugins/proc)
+add_subdirectory(plugins/proc_stat)
 
 # Main App
 add_subdirectory(main)

@@ -5,7 +5,7 @@
   
   <dds_properties>
     <dds_domain_id>0</dds_domain_id>
-    <dds_qos_file>/config/cavecanem_qos.xml</dds_qos_file>
+    <dds_qos_file>config/cavecanem_qos.xml</dds_qos_file>
     <dds_qos_default_library>testing</dds_qos_default_library>
     <dds_qos_default_profile>testing</dds_qos_default_profile>
   </dds_properties>
@@ -14,12 +14,11 @@
     <plugin_library dir="src/plugins">
       <plugin>cpu</plugin>
       <plugin>disk</plugin>
-      <<plugin>memory</plugin>
+      <plugin>memory</plugin>
       <plugin>net_load</plugin>
       <plugin>proc</plugin>
       <plugin>host_info</plugin>
       <plugin>proc_stat</plugin>
-      <!-- <plugin>snort</plugin> -->
     </plugin_library>
     
   </plugins>
