@@ -25,8 +25,8 @@
       <member name="gid" type="long"/>
       <member name="euid" type="long"/>
       <member name="egid" type="long"/>
-      <member name="user" type="string" stringMaxLength="20"/>
-      <member name="group" type="string" stringMaxLength="20"/>
+      <member name="user" type="string" stringMaxLength="512"/>
+      <member name="group" type="string" stringMaxLength="512"/>
       <member name="cpu_start_time" type="longLong"/>
       <member name="cpu_user" type="long"/>
       <member name="cpu_sys" type="long"/>

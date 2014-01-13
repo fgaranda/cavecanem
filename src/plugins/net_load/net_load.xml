@@ -13,9 +13,9 @@
     <struct name="net_load">
       <member name="hostname" type="string" stringMaxLength="50" key="true"/>
       <member name="ts" type="long"/>
-      <member name="device" type="string" stringMaxLength="10" key="true"/>
-      <member name="type" type="string" stringMaxLength="20"/>
-      <member name="description" type="string" stringMaxLength="100"/>
+      <member name="device" type="string" stringMaxLength="256" key="true"/>
+      <member name="type" type="string" stringMaxLength="64"/>
+      <member name="description" type="string" stringMaxLength="256"/>
       <member name="hwaddr" type="string" stringMaxLength="20"/>
       <member name="address" type="string" stringMaxLength="20"/>
       <member name="destination" type="string" stringMaxLength="20"/>
