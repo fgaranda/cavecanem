@@ -1,0 +1,46 @@
+<plugin name="proc">
+  <dll>proc</dll>
+  <create_function>create_proc</create_function>
+  <publishing_period_sec>1</publishing_period_sec>
+  <dds_properties>
+    <dds_qos_library>deployment</dds_qos_library>
+    <dds_qos_profile>deployment</dds_qos_profile>
+  </dds_properties>
+  <plugin_config>
+  </plugin_config>
+
+  <type_definition type_name="proc">
+    <struct name="proc">
+      <member name="hostname" type="string" stringMaxLength="50" key="true"/>
+      <member name="ts" type="long"/>
+      <member name="pid" type="long" key="true"/>
+      <member name="name" type="string" stringMaxLength="30" key="true"/>
+      <member name="state" type="char"/>
+      <member name="ppid" type="long"/>
+      <member name="tty" type="long"/>
+      <member name="priority" type="long"/>
+      <member name="processor" type="long"/>
+      <member name="nice" type="long"/>
+      <member name="uid" type="long"/>
+      <member name="gid" type="long"/>
+      <member name="euid" type="long"/>
+      <member name="egid" type="long"/>
+      <member name="user" type="string" stringMaxLength="20"/>
+      <member name="group" type="string" stringMaxLength="20"/>
+      <member name="cpu_start_time" type="longLong"/>
+      <member name="cpu_user" type="long"/>
+      <member name="cpu_sys" type="long"/>
+      <member name="cpu_total" type="long"/>
+      <member name="cpu_last_time" type="longLong"/>
+      <member name="cpu_percent" type="double"/>
+      <member name="mem_size" type="long"/>
+      <member name="mem_resident" type="long"/>
+      <member name="mem_share" type="long"/>
+      <member name="mem_minor_faults" type="long"/>
+      <member name="mem_major_faults" type="long"/>
+      <member name="mem_page_faults" type="long"/>
+    </struct>
+  </type_definition>
+</plugin>
+    
+
