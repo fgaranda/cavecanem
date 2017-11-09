@@ -44,7 +44,8 @@ endif()
 # Find ndds_c.h header file
 find_path(CONNEXTDDS_INCLUDE_DIRS
   NAMES ndds_c.h
-  PATHS ${NDDSHOME}/include/ndds
+  PATHS ${NDDSHOME}
+  PATH_SUFFIXES /include/ndds
   )
 # We need to include both include and include/ndds directories
 set(CONNEXTDDS_INCLUDE_DIRS
@@ -55,17 +56,20 @@ set(CONNEXTDDS_INCLUDE_DIRS
 # Add Core, C, and C++ libraries for the given architecture
 find_library(nddscore_lib 
   NAMES ${nddscore_libname}
-  PATHS ${NDDSHOME}/lib/${ARCHITECTURE}
+  PATHS ${NDDSHOME}
+  PATH_SUFFIXES /lib/${ARCHITECTURE}
   )
 
 find_library(nddsc_lib 
   NAMES ${nddsc_libname}
-  PATHS ${NDDSHOME}/lib/${ARCHITECTURE}
+  PATHS ${NDDSHOME}
+  PATH_SUFFIXES /lib/${ARCHITECTURE}
   )
 
 find_library(nddscpp_lib 
   NAMES ${nddscpp_libname}
-  PATHS ${NDDSHOME}/lib/${ARCHITECTURE}
+  PATHS ${NDDSHOME}
+  PATH_SUFFIXES /lib/${ARCHITECTURE}
   )
 
 set(CONNEXTDDS_LIBRARIES 
